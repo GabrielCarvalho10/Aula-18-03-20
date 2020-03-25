@@ -1,6 +1,5 @@
 package br.fai;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -16,6 +15,9 @@ public class Main {
 		Scanner scanner = new Scanner(System.in); 
 		Cavalo cavalo = new Cavalo(0, null);
 		Girafa girafa = new Girafa(0, null);
+		Animal animal = new Animal() {
+		};
+
 		
 		
 		
@@ -61,10 +63,16 @@ public class Main {
 				girafa.listarAnimal();
 				break;
 			case 5:
+				animal.listarTodoAnimal();
 				break;
 			case 6:
+				System.out.println("Entre com ID do Animal para remover");
+				scanner.nextLine();
+				int id = scanner.nextInt();
+				animal.removerAnimal(id);
 				break;
 			case 7:
+				animal.exibirAnimais();
 				break;
 			case 8:
 				break;
@@ -73,5 +81,4 @@ public class Main {
 		
 	}
 	
-
 }
