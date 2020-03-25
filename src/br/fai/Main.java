@@ -1,5 +1,6 @@
 package br.fai;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -13,6 +14,10 @@ public class Main {
 
 	private void start() {
 		Scanner scanner = new Scanner(System.in); 
+		Cavalo cavalo = new Cavalo(0, null);
+		Girafa girafa = new Girafa(0, null);
+		
+		
 		
 		int opcao = 0;
 		
@@ -30,12 +35,30 @@ public class Main {
 			
 			switch(opcao) {
 			case 1:
+				System.out.print("ID cavalo: ");
+				int idc = scanner.nextInt();
+				cavalo.setId(idc);
+				System.out.print("Nome do cavalo: ");
+				scanner.nextLine();
+				String nomec = scanner.nextLine();
+				cavalo.setNome(nomec);			
+				cavalo.cadastrarAnimal();	
 				break;
 			case 2:
+				System.out.print("ID girafa: ");
+				int idg = scanner.nextInt();
+				girafa.setId(idg);
+				System.out.print("Nome da girafa: ");
+				scanner.nextLine();
+				String nomeg = scanner.nextLine();
+				girafa.setNome(nomeg);			
+				girafa.cadastrarAnimal();
 				break;
 			case 3:
+				cavalo.listarAnimal();	
 				break;
 			case 4:
+				girafa.listarAnimal();
 				break;
 			case 5:
 				break;
@@ -49,5 +72,6 @@ public class Main {
 		}while(opcao != 8);
 		
 	}
+	
 
 }
